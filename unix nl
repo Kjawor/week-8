@@ -1,0 +1,9 @@
+import sys
+f = open(sys.argv[1])
+read = f.readlines()
+count = 0
+for n in read:
+    count += 1
+    print("{}: {}".format(count, n.strip()))
+
+f.close()
