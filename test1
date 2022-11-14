@@ -1,0 +1,15 @@
+import random
+CONSTANTS = ["Camel","Controller","Tree","Maths","Desk","Computer","Keyboard","Mouse","Monitor",]
+print("Password generator")
+print("====================")
+pass_num = int(input("How many passwords are needed?: "))
+if pass_num < 0 and pass_num > 24:
+    print("Please enter a value between 1 and 24")
+else:
+    count = 0
+    for i in range(0,pass_num):
+        count += 1 #prints the number
+        x = random.randint(0,len(CONSTANTS))
+        y = random.randint(0,len(CONSTANTS))
+        z = random.randint(0,len(CONSTANTS))
+        print(count, "-->",CONSTANTS[x] + CONSTANTS[z] + CONSTANTS[z])
