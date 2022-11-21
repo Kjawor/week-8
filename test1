@@ -1,15 +1,20 @@
 import random
-CONSTANTS = ["Camel","Controller","Tree","Maths","Desk","Computer","Keyboard","Mouse","Monitor",]
-print("Password generator")
+a = "b"
+CONSTANTS = ["Camel","Controller","Tree","Maths","Desk","Computer","Keyboard","Mouse","Monitor","apple","pear","banana","grape","orange","strawberry","kiwi","blueberry","lemon","dragonfruit","slate","paint","skate","tate"]
+print("Password Generator")
 print("====================")
-pass_num = int(input("How many passwords are needed?: "))
-if pass_num < 0 and pass_num > 24:
-    print("Please enter a value between 1 and 24")
+pass_num = (input("How many passwords are needed?: ")) #ask for password ammount
+if pass_num.isdigit(): # check to see if user input is an integer if not it will print the else statement at the bottom
+    pass_num = int(pass_num) #convert the input from string into an integer
+    if pass_num <= 0 or pass_num > 24: #make sure the range is correct
+        print("Please enter a value between 1 and 24")
+    else:
+        count = 0 #set an initial value for count
+        for i in range(0,pass_num):
+            count += 1 #prints the number to the left of the password
+            x,y,z= random.randint(0,len(CONSTANTS[:-1])), random.randint(0,len(CONSTANTS[:-1])), random.randint(0,len(CONSTANTS[:-1])) #assigns values from the constants list to variables, [:-1] is needed in order to not get an our of bounds error
+            print(count, "-->",CONSTANTS[x] + CONSTANTS[z] + CONSTANTS[y])
 else:
-    count = 0
-    for i in range(0,pass_num):
-        count += 1 #prints the number
-        x = random.randint(0,len(CONSTANTS))
-        y = random.randint(0,len(CONSTANTS))
-        z = random.randint(0,len(CONSTANTS))
-        print(count, "-->",CONSTANTS[x] + CONSTANTS[z] + CONSTANTS[z])
+    print("Please enter a number.")
+
+
