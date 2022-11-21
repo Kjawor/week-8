@@ -2,7 +2,8 @@ import random
 a = "b"
 CONSTANTS = ["Camel","Controller","Tree","Maths","Desk","Computer","Keyboard","Mouse","Monitor","apple","pear","banana","grape","orange","strawberry","kiwi","blueberry","lemon","dragonfruit","slate","paint","skate","tate"]
 print("Password Generator")
-print("====================")
+print("""==================
+""")
 pass_num = (input("How many passwords are needed?: ")) #ask for password ammount
 if pass_num.isdigit(): # check to see if user input is an integer if not it will print the else statement at the bottom
     pass_num = int(pass_num) #convert the input from string into an integer
@@ -13,8 +14,6 @@ if pass_num.isdigit(): # check to see if user input is an integer if not it will
         for i in range(0,pass_num):
             count += 1 #prints the number to the left of the password
             x,y,z= random.randint(0,len(CONSTANTS[:-1])), random.randint(0,len(CONSTANTS[:-1])), random.randint(0,len(CONSTANTS[:-1])) #assigns values from the constants list to variables, [:-1] is needed in order to not get an our of bounds error
-            print(count, "-->",CONSTANTS[x] + CONSTANTS[z] + CONSTANTS[y])
+            print(" ",count, "-->",CONSTANTS[x] + CONSTANTS[z] + CONSTANTS[y])
 else:
     print("Please enter a number.")
-
-
