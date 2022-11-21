@@ -1,0 +1,27 @@
+print("""Park Run Timer
+~~~~~~~~~~~~~~
+
+Let's go!
+""")
+time = dict()
+pcount = 0
+sum = 0
+while True:
+    count = 0
+    kcount = 1
+    data = input()
+    if data == "":
+        print("END")
+        break
+    temp = data.split('::')
+    time[temp[count]] = int(temp[kcount])
+    count += 1
+    kcount += 1
+    pcount += 1
+print(time, pcount)
+print("Total runners: ",pcount)
+for value in time.values():
+    value = int(value)
+    sum = sum + value
+avr = sum / pcount
+print("Average Time: {} minutes , {} seconds".format(avr//60,avr%60))
